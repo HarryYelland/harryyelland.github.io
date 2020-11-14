@@ -188,5 +188,29 @@ th, td {
 	font-weight: normal;
 }
 
+.code_container{
+	background-color: #303030;
+	color: white;
+}
+
+.comment{
+	color: #ffffbf;
+	display: inline;
+}
+
+.linenumber{
+	color: #D3D3D3;
+	display:inline;
+}
+
+.keyword{
+	color: #bf94e4;
+	display: inline;
+}
+
+.keyword2{
+	color: #9ccb9c;
+	display: inline;
+}
 
 
