@@ -172,6 +172,8 @@ th, td {
 
 .inline{
 	display: inline-block;
+	display: inline;
+	margin: auto;
 }
 
 
