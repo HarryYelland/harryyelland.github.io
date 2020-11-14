@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class = "code_container">
+<pre> 
+    <div class="linenumber">1</div>  <div class="keyword">.data</div>
+    <div class="linenumber">2</div>    message: .asciiz "The first ten numbers of the fibonacci sequence are: \n"
+    <div class="linenumber">3</div>    message2: .asciiz ", "
+    <div class="linenumber">4</div>    number1: .word 1
+    <div class="linenumber">5</div>    number2: .word 1
+    <div class="linenumber">6</div>    number3: .word 0
+    <div class="linenumber">7</div>
+    <div class="linenumber">8</div>  <div class="keyword">.text</div>
+    <div class="linenumber">9</div>    <div class="keyword2">main:</div>
+   <div class="linenumber">10</div>      lw $t1, number1($zero)               <div class="comment">#set t1 to 1</div>
+   <div class="linenumber">11</div>      lw $t2, number2($zero)               <div class="comment">#set t2 to 1</div>
+   <div class="linenumber">12</div>      lw $t3, number3($zero)               <div class="comment">#set t3 to 0</div>
+   <div class="linenumber">13</div>
+   <div class="linenumber">14</div>      li $v0, 4                            <div class="comment">#calls output to screen</div>
+   <div class="linenumber">15</div>      la $a0, message                      <div class="comment">#adds message for output</div>
+   <div class="linenumber">16</div>      <div class="keyword">syscall</div>                              <div class="comment">#calls output execution</div>
+   <div class="linenumber">17</div>
+   <div class="linenumber">18</div>      addi $t0, $zero, 0                   <div class="comment">#i=0 (set t0 to 0)</div>
+   <div class="linenumber">19</div>      <div class="keyword2">while:</div>                               <div class="comment">#start while loop</div>
+   <div class="linenumber">20</div>        add  $t3, $t1, $t2                 <div class="comment">#t3 = t1 + t2</div>
+   <div class="linenumber">21</div>	
+   <div class="linenumber">22</div>        li $v0, 1                          <div class="comment">#print to screen</div>
+   <div class="linenumber">23</div>        add $a0, $zero, $t1                <div class="comment">#resets and adds t1 to output message</div>
+   <div class="linenumber">24</div>        <div class="keyword">syscall</div>                            <div class="comment">#calls output execution</div>
+   <div class="linenumber">25</div>
+   <div class="linenumber">26</div>        add $t1, $zero, $t2                <div class="comment">#moves contents of t2 to t1</div>
+   <div class="linenumber">27</div>        add $t2, $zero, $t3                <div class="comment">#moves contents of t3 to t2</div>
+   <div class="linenumber">28</div>
+   <div class="linenumber">29</div>	     <div class="keyword2">bgt</div>  $t0, 8, <div class="keyword">exit</div>                   <div class="comment">#exit if greater than eight</div>
+   <div class="linenumber">30</div>			 
+   <div class="linenumber">31</div>        li $v0, 4                          <div class="comment">#print to screen</div>
+   <div class="linenumber">32</div>        la $a0, message2                   <div class="comment">#adds comma for output</div>
+   <div class="linenumber">33</div>        <div class="keyword">syscall</div>                            <div class="comment">#calls output execution</div>
+   <div class="linenumber">34</div>
+   <div class="linenumber">35</div>        addi $t0, $t0, 1	                <div class="comment">#increments loop counter</div>
+   <div class="linenumber">36</div>     		
+   <div class="linenumber">37</div>       <div class="keyword2">j while</div>                             <div class="comment">#jumps back to start of while loop</div>
+   <div class="linenumber">38</div>     <div class="keyword">exit:</div>                                <div class="comment">#end of while loop</div>
+   <div class="linenumber">39</div>
+   <div class="linenumber">40</div>  li $v0 10                                <div class="comment">#program terminator</div>
+   <div class="linenumber">41</div>  <div class="keyword">syscall</div>
+   
+</pre>
+</div>
 
+</body>
+</html>
